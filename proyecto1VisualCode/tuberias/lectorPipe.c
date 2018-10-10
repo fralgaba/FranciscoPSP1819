@@ -7,13 +7,13 @@
 
 int main(int argc, char const *argv[])
 {
-    // Hace falta crear una tubería (mknode tuberia p).
     char leido[100];
-    int descriptorLectura;
-    descriptorLectura = open("./tuberia", O_RDONLY);
-    read(descriptorLectura, leido, 100 * sizeof(char));
+    int fd[2];
+    pipe(fd);
+    close(fd[1]);
+    read(fd[0], leido, 100 * sizeof(char));
     fprintf(stdout, "%s\n", leido);
-    close(descriptorLectura);
+    close(fd[0]);
 
     return 0;
 }

@@ -7,6 +7,7 @@
 
 int main(int argc, char const *argv[])
 {
+    // Hace falta crear una tubería (mknode tuberia p).
     char *frase = "Hola soy el escritor";
     int descriptorEscritura;
     descriptorEscritura = open("./tuberia", O_WRONLY);
