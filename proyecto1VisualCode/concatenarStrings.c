@@ -2,6 +2,10 @@
 #include <string.h>
 #include <stdlib.h>
 
+void imprimirHolaMundo();
+void imprimirEntero(int, char); // No hace falta poner aquí arriba el nombre del parámetro.
+void imprimirASCIIHasta(char);
+
 int main(int argc, char const *argv[])
 {
     /*char cad1[] = "Hola";
@@ -27,5 +31,27 @@ int main(int argc, char const *argv[])
     strcat(cadRes, cad3);
 
     fprintf(stdout, "%s %d\n", cadRes, tamTotal);
+
+    imprimirHolaMundo();
+    imprimirEntero(45, 75);
+    imprimirASCIIHasta('p');
     return 0;
+}
+
+void imprimirHolaMundo()
+{
+    fprintf(stdout, "Hola mundo\n");
+}
+
+void imprimirEntero(int a, char b)
+{
+    fprintf(stdout, "Me has dicho que imprima el entero %d y el carácter %c\n", a, b);
+}
+
+void imprimirASCIIHasta(char a)
+{
+    int i;
+    for (i = 0; i <= a; i++) {
+        fprintf(stdout, "%c = %d\n", i, i);
+    }
 }
