@@ -10,6 +10,7 @@ int main(int argc, char const *argv[])
     if (fichero == NULL) {
         perror("Error abriendo el fichero");
         fprintf(stderr, "Línea: %d -> %s -> Código de error %d. Texto: %s\n", __LINE__, __FILE__, errno, strerror(errno));
+        exit(-1);
     }
 
     return 0;
